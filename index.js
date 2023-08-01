@@ -1,3 +1,4 @@
+//variables
 const canvas = document.querySelector("#draw");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
@@ -14,6 +15,7 @@ let lastY = 0;
 let hue = 0;
 let direction = true;
 
+//draw function
 function draw(e) {
     if (!isDrawing) return; // stops from drawing when they are not moused down
     console.log(e);
@@ -45,6 +47,7 @@ canvas.addEventListener("mousedown", (e) => {
     [lastX, lastY] = [e.offsetX, e.offsetY];
 });
 
+//add eventListeners
 canvas.addEventListener("mousemove", draw);
 canvas.addEventListener("mouseup", ()=> isDrawing = false);
 canvas.addEventListener("mouseout", ()=> isDrawing = false);
